@@ -42,7 +42,7 @@ header {
   padding: 2rem;
   background-color: var(--secondary--color);
   border-radius: 2rem;
-  width: 45%;
+  width: 49%;
 }
 .editBudget h2,
 .transactionContainer h2 {
@@ -85,6 +85,8 @@ header {
   width: 20%;
   height: 100%;
   font-size: 1.6rem;
+  border: none;
+  cursor: pointer;
 }
 
 .transactionName,
@@ -107,6 +109,8 @@ header {
   height: 60px;
   border-radius: 2rem;
   width: 100%;
+  padding-left: 1rem;
+  font-size: 1.8rem;
 }
 
 .transactionCost input {
@@ -127,6 +131,10 @@ header {
   padding: 1rem 2rem;
   height: 60px;
   border-radius: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  border: none;
 }
 
 .expenseDiv {
@@ -138,4 +146,52 @@ header {
   width: 65%;
 }
 
+/* MONEY */
 
+.money {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  height: 15rem;
+  margin: 2rem auto;
+}
+
+.budgetNum,
+.expensesNum,
+.balanceNum {
+  display: flex;
+  justify-content: space-evenly;
+  height: 70%;
+  align-items: center;
+  border-radius: 2rem;
+  width: 32%;
+  background-color: var(--secondary--color);
+}
+
+.totalBudget,
+.totalExpenses,
+.totalBalance {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35%;
+  width: 30%;
+  font-size: 1.6rem;
+}
+
+.svg {
+  height: 100%;
+}
+
+.transactionHistory {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  min-height: 200px;
+}
+.transactionHistory h2 {
+  text-align: center;
+}
