@@ -1,13 +1,62 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Expense Tracker</title>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <header>
+        <h1>Expense Tracker</h1>
+      </header>
+      <div class="operations">
+        <div class="editBudget">
+          <h2>Edit Budget</h2>
+          <div class="budget">
+            <label for="budget"></label>
+            <input type="number" id="budget" />
+            <button>Set Budget</button>
+          </div>
+          <div class="transactionDiv">
+            <h2>Add Transaction</h2>
+            <div class="transaction">
+              <label for="transactionName"></label>
+              <input type="number" id="transactionName" />
+              <label for="transactionCost"></label>
+              <input type="number" id="transactionCost" />
+              <button>Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="money">
+        <div class="budgetNum">
+          <img src="" alt="">
+          <div class="totalBudget">
+            <p>$5000</p>
+            <p>Budget</p>
+          </div>
+        </div>
+        <div class="expensesNum">
+          <img src="" alt="">
+          <div class="totalExpenses">
+            <p>$0</p>
+            <p>Expenses</p>
+          </div>
+        </div>
+        <div class="balanceNum">
+          <img src="" alt="">
+          <div class="totalBudget">
+            <p>$5000</p>
+            <p>Balance</p>
+          </div>
+        </div>
+      </div>
+      <div class="transactionHistory">
+        <h2>Your transaction history is empty.</h2>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
