@@ -23,22 +23,19 @@ html{
 }
 
 header{
-  /* border: 1px solid black; */
   margin:5rem 0;
   text-align: center;
-  font-size: 2rem;
+  font-size: 2.6rem;
 }
 
 .operations{
-  /* border: 1px solid black; */
   display: flex;
   justify-content: space-between;
   width:70%;
   margin: 2rem auto 0;
 }
 
-.editBudget{
-  /* border: 1px solid black; */
+.editBudget, .transactionContainer{
   display: flex;
   flex-direction: column;
   padding: 2rem;
@@ -47,28 +44,27 @@ header{
   width: 45%;
 
 }
-.editBudget h2 {
-  font-size: 3rem;
+.editBudget h2, .transactionContainer h2 {
+  font-size: 2.5rem;
 }
 
-.budget{
-  /* border: 1px solid black; */
+
+.budget, .transaction{
   height: 100%;
+  flex-direction: column;
   margin-top: 2rem;
   display: flex;
-  flex-direction: column;
   font-size: 1.6rem;
 }
 
 .budgetInput {
   width: 100%;
-  /* border: 1px solid black; */
   margin: 1rem 0;
   display: flex;
   justify-content: space-between;
 }
 
-.budgetInput input {
+.budgetInput input{
   width: 75%;
   border-radius: 2rem;
   padding-left: 1rem;
@@ -83,3 +79,53 @@ width: 20%;
 height: 100%;
 font-size: 1.6rem;
 }
+
+
+.transactionName{
+  border: 1px solid black;
+width: 45%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+}
+
+.transactionName input {
+  height: 60px;
+  border-radius: 2rem;
+}
+/* ----------------------------------------- */
+.transactionNameDiv{
+  border:1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 1rem 0;
+  width: 45%;
+  height: 100%;
+}
+
+.transactionCostDiv{
+  border:1px solid black;
+  width: 45%;
+}
+
+.transaction{
+  justify-content: space-between;
+}
+
+.transactionNameDiv input {
+  width: 75%;
+  height: 100%;
+  margin-top: 1rem;
+  border-radius: 2rem;
+  padding-left: 1rem;
+}
+
+.labelContainer{
+  width: 100%;
+ display: flex;
+  border: 1px solid black;
+  justify-content: space-between;
+}
+

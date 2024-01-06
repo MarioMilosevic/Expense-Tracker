@@ -3,10 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;500;600;700&family=Poppins&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;500;600;700&family=Poppins&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/style.css" />
     <title>Expense Tracker</title>
   </head>
   <body>
@@ -20,41 +23,61 @@
           <div class="budget">
             <label for="budget">Your budget</label>
             <div class="budgetInput">
-              <input type="text" id="budget" placeholder="1000$"/>
+              <input type="text" id="budget" placeholder="1000$" />
               <button>Set Budget</button>
             </div>
           </div>
         </div>
 
-          <div class="transactionDiv">
-            <h2>Add Transaction</h2>
-            <div class="transaction">
+        <div class="transactionContainer">
+           <h2>Add Transaction</h2>
+           <div class="transaction">
+            <div class="transactionName">
+              <label for="expense">Transaction Name</label>
+              <input type="text" id="expense" />
+            </div>
+
+            <!--  -->
+
+          </div>
+          <!--<div class="transaction">
+            <div class="labelContainer">
               <label for="transactionName">Transaction Name</label>
+              <label for="transactionCost">Transaction Cost</label>
+            </div>
+            <div class="transactionContainer">
+
+            <div class="transactionNameDiv">
               <input type="text" id="transactionName" />
-              <label for="transactionCost">Transaction cost</label>
-              <input type="text" id="transactionCost" />
-              <button>Add</button>
+            </div>
+            <div class="transactionCostDiv">
+              <div class="transactionInput">
+                <input type="text" id="transactionCost" />
+                <button>Add</button>
+              </div>
             </div>
           </div>
 
+          </div> -->
+        </div>
       </div>
       <div class="money">
         <div class="budgetNum">
-          <img src="" alt="">
+          <img src="" alt="" />
           <div class="totalBudget">
             <p>$5000</p>
             <p>Budget</p>
           </div>
         </div>
         <div class="expensesNum">
-          <img src="" alt="">
+          <img src="" alt="" />
           <div class="totalExpenses">
             <p>$0</p>
             <p>Expenses</p>
           </div>
         </div>
         <div class="balanceNum">
-          <img src="" alt="">
+          <img src="" alt="" />
           <div class="totalBudget">
             <p>$5000</p>
             <p>Balance</p>
