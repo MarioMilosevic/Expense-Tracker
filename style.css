@@ -1,4 +1,4 @@
-:root{
+:root {
   --body--background-color: #e6e6e6;
   --secondary--color: #fff;
   --cta--color: #0086b3;
@@ -15,41 +15,42 @@ body {
   font-family: "Open Sans", sans-serif;
   font-family: "Poppins", sans-serif;
   font-family: "Roboto", sans-serif;
-  background-color: var(--body--background-color)
+  background-color: var(--body--background-color);
 }
 
-html{
+html {
   font-size: 62.5%;
 }
 
-header{
-  margin:5rem 0;
+header {
+  margin: 5rem 0;
   text-align: center;
   font-size: 2.6rem;
 }
 
-.operations{
+.operations {
   display: flex;
   justify-content: space-between;
-  width:70%;
+  width: 70%;
   margin: 2rem auto 0;
 }
 
-.editBudget, .transactionContainer{
+.editBudget,
+.transactionContainer {
   display: flex;
   flex-direction: column;
   padding: 2rem;
   background-color: var(--secondary--color);
   border-radius: 2rem;
   width: 45%;
-
 }
-.editBudget h2, .transactionContainer h2 {
+.editBudget h2,
+.transactionContainer h2 {
   font-size: 2.5rem;
 }
 
-
-.budget, .transaction{
+.budget,
+.transaction {
   height: 100%;
   flex-direction: column;
   margin-top: 2rem;
@@ -57,8 +58,10 @@ header{
   font-size: 1.6rem;
 }
 
-.transaction{
+.transaction {
   flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .budgetInput {
@@ -68,48 +71,54 @@ header{
   justify-content: space-between;
 }
 
-.budgetInput input{
+.budgetInput input {
   width: 75%;
   border-radius: 2rem;
   padding-left: 1rem;
 }
 
 .budgetInput button {
-background-color: var(--cta--color);
-color: var(--body--background-color);
-padding:1rem 2rem;
-border-radius: 2rem;
-width: 20%;
-height: 100%;
-font-size: 1.6rem;
+  background-color: var(--cta--color);
+  color: var(--body--background-color);
+  padding: 1rem 2rem;
+  border-radius: 2rem;
+  width: 20%;
+  height: 100%;
+  font-size: 1.6rem;
 }
 
-
-.transactionName, .transactionCost{
-width: 40%;
-height: 90%;
-display: flex;
-flex-direction: column;
-position: relative;
-justify-content: space-between;
+.transactionName,
+.transactionCost {
+  width: 40%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
 }
-
 
 .transactionCost {
   flex-direction: row;
+  width: 50%;
 }
 
-.transactionName input, .transactionCost input {
+.transactionName input,
+.transactionCost input {
   height: 60px;
   border-radius: 2rem;
   width: 100%;
 }
 
-.transactionCostInput{
+.transactionCost input {
+  width: 50%;
+}
+
+.transactionCostInput {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 100%;
+  margin: 0 auto;
 }
 
 .addBtn {
@@ -120,46 +129,13 @@ justify-content: space-between;
   border-radius: 2rem;
 }
 
-.transactionButton{
+.expenseDiv {
   display: flex;
-  background-color: yellow;
-  align-items: center;
-  justify-content: center;
-  height: 50%;
-}
-
-/* ----------------------------------------- */
-/* .transactionNameDiv{
-  border:1px solid black;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 1rem 0;
-  width: 45%;
-  height: 100%;
-} */
-
-.transactionCostDiv{
-  border:1px solid black;
-  width: 45%;
-}
-
-.transaction{
   justify-content: space-between;
 }
 
-.transactionNameDiv input {
-  width: 75%;
-  height: 100%;
-  margin-top: 1rem;
-  border-radius: 2rem;
-  padding-left: 1rem;
+.expenseDiv input {
+  width: 65%;
 }
 
-.labelContainer{
-  width: 100%;
- display: flex;
-  border: 1px solid black;
-  justify-content: space-between;
-}
 
