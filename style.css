@@ -1,0 +1,85 @@
+:root{
+  --body--background-color: #e6e6e6;
+  --secondary--color: #fff;
+  --cta--color: #0086b3;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--body--background-color)
+}
+
+html{
+  font-size: 62.5%;
+}
+
+header{
+  /* border: 1px solid black; */
+  margin:5rem 0;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.operations{
+  /* border: 1px solid black; */
+  display: flex;
+  justify-content: space-between;
+  width:70%;
+  margin: 2rem auto 0;
+}
+
+.editBudget{
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  background-color: var(--secondary--color);
+  border-radius: 2rem;
+  width: 45%;
+
+}
+.editBudget h2 {
+  font-size: 3rem;
+}
+
+.budget{
+  /* border: 1px solid black; */
+  height: 100%;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+}
+
+.budgetInput {
+  width: 100%;
+  /* border: 1px solid black; */
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.budgetInput input {
+  width: 75%;
+  border-radius: 2rem;
+  padding-left: 1rem;
+}
+
+.budgetInput button {
+background-color: var(--cta--color);
+color: var(--body--background-color);
+padding:1rem 2rem;
+border-radius: 2rem;
+width: 20%;
+height: 100%;
+font-size: 1.6rem;
+}

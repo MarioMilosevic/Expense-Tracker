@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Open+Sans:wght@400;500;600;700&family=Poppins&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
     <title>Expense Tracker</title>
   </head>
   <body>
@@ -14,21 +18,25 @@
         <div class="editBudget">
           <h2>Edit Budget</h2>
           <div class="budget">
-            <label for="budget"></label>
-            <input type="number" id="budget" />
-            <button>Set Budget</button>
-          </div>
-          <div class="transactionDiv">
-            <h2>Add Transaction</h2>
-            <div class="transaction">
-              <label for="transactionName"></label>
-              <input type="number" id="transactionName" />
-              <label for="transactionCost"></label>
-              <input type="number" id="transactionCost" />
-              <button>Add</button>
+            <label for="budget">Your budget</label>
+            <div class="budgetInput">
+              <input type="text" id="budget" placeholder="1000$"/>
+              <button>Set Budget</button>
             </div>
           </div>
         </div>
+
+          <div class="transactionDiv">
+            <h2>Add Transaction</h2>
+            <div class="transaction">
+              <label for="transactionName">Transaction Name</label>
+              <input type="text" id="transactionName" />
+              <label for="transactionCost">Transaction cost</label>
+              <input type="text" id="transactionCost" />
+              <button>Add</button>
+            </div>
+          </div>
+
       </div>
       <div class="money">
         <div class="budgetNum">
