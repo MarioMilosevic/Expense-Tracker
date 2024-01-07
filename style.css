@@ -31,7 +31,7 @@ header {
 .operations {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 60%;
   margin: 2rem auto 0;
 }
 
@@ -75,6 +75,7 @@ header {
   width: 75%;
   border-radius: 2rem;
   padding-left: 1rem;
+  font-size: 1.8rem;
 }
 
 .budgetInput button {
@@ -151,7 +152,7 @@ header {
 .money {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 60%;
   height: 15rem;
   margin: 2rem auto;
 }
@@ -160,11 +161,12 @@ header {
 .expensesNum,
 .balanceNum {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   height: 70%;
   align-items: center;
   border-radius: 2rem;
   width: 32%;
+  padding: 1rem;
   background-color: var(--secondary--color);
 }
 
@@ -174,10 +176,16 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 35%;
-  width: 30%;
-  font-size: 1.6rem;
+  height: 70%;
+  width: 55%;
+  font-size: 2rem;
+  font-weight: 500;
 }
+
+.totalBudget p:nth-child(2), .totalExpenses p:nth-child(2), .totalBalance p:nth-child(2){
+  font-size: 1.7rem;
+}
+
 
 .svg {
   height: 100%;
@@ -194,4 +202,24 @@ header {
 }
 .transactionHistory h2 {
   text-align: center;
+}
+
+.svgBudget,
+.svgExpense,
+.svgBalance {
+  border-radius: 2rem;
+  padding: 1rem 2rem;
+  color: var(--body--background-color);
+}
+
+.svgBudget {
+  background-color: #0079a1;
+}
+
+.svgExpense {
+  background-color: #b3b300;
+}
+
+.svgBalance {
+  background-color: #007300;
 }
