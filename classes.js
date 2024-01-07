@@ -15,8 +15,20 @@ export class Budget {
     return this.budget;
   }
 
-  setBalance() {
-    this.balance = this.budget - this.expense;
+  setExpense(value){
+    this.expense = Number(value)
+  }
+
+  getExpense(){
+    return this.expense
+  }
+
+  setBalance(value){
+    this.balance = Number(value)
+  }
+
+  calculateBalance() {
+    this.balance = this.balance - this.expense;
   }
 
   getBalance() {
