@@ -24,7 +24,7 @@
             <label for="budget">Your budget</label>
             <div class="budgetInput">
               <input type="text" id="budget" placeholder="1000$" />
-              <button>Set Budget</button>
+              <button id="setBtn">Set Budget</button>
             </div>
           </div>
         </div>
@@ -34,13 +34,13 @@
           <div class="transaction">
             <div class="transactionName">
               <label for="expense">Transaction Name</label>
-              <input type="text" id="expense" />
+              <input type="text" id="expenseName" />
             </div>
             <div class="transactionCost">
               <div class="transactionCostInput">
                 <label for="expense">Transaction Cost</label>
                 <div class="expenseDiv">
-                  <input type="text" id="expense" />
+                  <input type="text" id="expenseCost" />
                   <button class="addBtn">Add</button>
                 </div>
               </div>
@@ -67,7 +67,7 @@
           </svg>
 
           <div class="totalBudget">
-            <p>$5000</p>
+            <p id="totalBudget">$5000</p>
             <p>Budget</p>
           </div>
         </div>
@@ -89,7 +89,7 @@
           </svg>
 
           <div class="totalExpenses">
-            <p>$0</p>
+            <p id="totalExpenses">$0</p>
             <p>Expenses</p>
           </div>
         </div>
@@ -110,7 +110,7 @@
           </svg>
 
           <div class="totalBalance">
-            <p>$5000</p>
+            <p id="totalBalance">$5000</p>
             <p>Balance</p>
           </div>
         </div>
