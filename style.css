@@ -198,13 +198,15 @@ header {
 }
 
 .transactionHistory {
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
   font-size: 2rem;
   min-height: 200px;
+
 }
 .transactionHistory h2 {
   text-align: center;
@@ -228,4 +230,14 @@ header {
 
 .svgBalance {
   background-color: #007300;
+}
+
+.transactionDescription{
+  display: flex;
+  border: 1px solid black;
+  width: 100%;
+  justify-content: space-between;
+  padding:1rem 2rem;
+  background-color: var(--secondary--color);
+  border-radius: 2rem;
 }
