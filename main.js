@@ -1,7 +1,7 @@
 "use strict";
 import { constants } from "./constants";
-import { Budget, Transaction, TransactionManager } from "./classes";
-import { createTransaction,getCurrentDate } from "./helpers";
+import { Budget, Transaction, TransactionManager, UI } from "./classes";
+import { createTransaction, getCurrentDate } from "./helpers";
 const {
   budgetInput,
   setBudgetBtn,
@@ -12,24 +12,34 @@ const {
   totalExpenses,
   totalBalance,
   transactionHistory,
+  transactionHistoryHeading,
+  mainTransactionDescription,
 } = constants();
+
 let counter = 0;
 const budget = new Budget();
+const transactionMan = new TransactionManager();
+const userInterface = new UI();
 
 setBudgetBtn.addEventListener("click", function () {
-  budget.setBudget(budgetInput.value);
-  budget.setBalance();
-  totalBudget.textContent = `$${budgetInput.value}`;
-  totalBalance.textContent = `$${budget.getBalance()}`;
-  console.log(expenseCostInput);
-  budgetInput.value = "";
+  if(budgetInput.value !== '' && budgetInput.length >= 1){
+    budget.setBudget(budgetInput.value);
+    budget.setBalance();
+    totalBudget.textContent = `$${budgetInput.value}`;
+    totalBalance.textContent = `$${budget.getBalance()}`;
+    console.log(expenseCostInput);
+    userInterface.reset(budgetInput);
+  } else {
+    alert('ne')
+  }
 });
 
 addTransactionBtn.addEventListener("click", function () {
   counter++;
   const expenseNameValue = expenseNameInput.value;
   const expenseCostValue = expenseCostInput.value;
- const date = getCurrentDate()
+  totalExpenses.textContent = `$${expenseCostValue}`
+  const date = getCurrentDate();
   const transaction = new Transaction(
     counter,
     expenseNameValue,
@@ -38,6 +48,7 @@ addTransactionBtn.addEventListener("click", function () {
     "Remove"
   );
   createTransaction(transactionHistory, transaction);
+  transactionMan.add(transaction);
+  userInterface.show(mainTransactionDescription)
+  userInterface.hide(transactionHistoryHeading)
 });
-
-

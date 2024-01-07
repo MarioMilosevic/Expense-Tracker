@@ -10,7 +10,8 @@ export function constants() {
   const totalExpenses = document.querySelector("#totalExpenses");
   const totalBalance = document.querySelector("#totalBalance");
   const transactionHistory = document.querySelector(".transactionHistory");
-
+const transactionHistoryHeading = document.querySelector('.transactionHistoryHeading')
+const mainTransactionDescription = document.querySelector('#mainTransactionDescription')
   return {
     budgetInput,
     setBudgetBtn,
@@ -21,5 +22,7 @@ export function constants() {
     totalExpenses,
     totalBalance,
     transactionHistory,
+    transactionHistoryHeading,
+    mainTransactionDescription
 };
 }

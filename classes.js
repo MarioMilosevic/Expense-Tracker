@@ -15,12 +15,12 @@ export class Budget {
     return this.budget;
   }
 
-  setBalance(){
-    this.balance = this.budget - this.expense
+  setBalance() {
+    this.balance = this.budget - this.expense;
   }
 
-  getBalance(){
-    return this.balance
+  getBalance() {
+    return this.balance;
   }
 }
 
@@ -31,6 +31,7 @@ export class Transaction {
     this.cost = cost;
     this.date = date;
     this.actions = actions;
+    this.id = Math.random() * 1000;
   }
 }
 
@@ -38,4 +39,35 @@ export class TransactionManager {
   constructor() {
     this.transactionArr = [];
   }
+
+  add(transaction) {
+    this.transactionArr.push(transaction);
+  }
+
+  remove(transactionId) {
+    this.transactionArr = this.transactionArr.filter(
+      (transaction) => transaction.id !== transactionId
+    );
+  }
+
+  getTransactions() {
+    return this.transactionArr;
+  }
+}
+
+export class UI {
+    constructor(){
+
+    }
+    reset(el){
+        el.value = ''
+    }
+
+ 
+    show(el){
+        el.classList.remove('hidden')
+    }
+    hide(el){
+        el.classList.add('hidden')
+    }
 }
