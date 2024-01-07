@@ -76,7 +76,7 @@ header {
 }
 
 .budgetInput input {
-  width: 75%;
+  width: 65%;
   border-radius: 2rem;
   padding-left: 1rem;
   font-size: 1.8rem;
@@ -87,11 +87,12 @@ header {
   color: var(--body--background-color);
   padding: 1rem 2rem;
   border-radius: 2rem;
-  width: 20%;
+  width: 30%;
   height: 100%;
   font-size: 1.6rem;
   border: none;
   cursor: pointer;
+  text-align: center;
   transition: 0.3s;
 }
 
@@ -125,7 +126,7 @@ header {
 }
 
 .transactionCost input {
-  width: 50%;
+  width: 30%;
 }
 
 .transactionCostInput {
@@ -147,6 +148,7 @@ header {
   cursor: pointer;
   border: none;
   transition: 0.3s;
+  width: 35%;
 }
 
 .addBtn:hover{
