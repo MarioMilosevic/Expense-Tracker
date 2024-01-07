@@ -42,8 +42,12 @@ header {
   padding: 2rem;
   background-color: var(--secondary--color);
   border-radius: 2rem;
-  width: 49%;
+  width: 40%;
 }
+.transactionContainer{
+  width: 59%;
+}
+
 .editBudget h2,
 .transactionContainer h2 {
   font-size: 2.5rem;
@@ -92,22 +96,23 @@ header {
 
 .transactionName,
 .transactionCost {
-  width: 40%;
+  width: 55%;
   height: 90%;
   display: flex;
   flex-direction: column;
   position: relative;
   justify-content: space-between;
+
 }
 
 .transactionCost {
   flex-direction: row;
-  width: 50%;
+  width:40%;
 }
 
 .transactionName input,
 .transactionCost input {
-  height: 60px;
+  height: 55px;
   border-radius: 2rem;
   width: 100%;
   padding-left: 1rem;
@@ -141,6 +146,7 @@ header {
 .expenseDiv {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .expenseDiv input {
