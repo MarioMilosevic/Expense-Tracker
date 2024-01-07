@@ -92,6 +92,11 @@ header {
   font-size: 1.6rem;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.budgetInput button:hover{
+  transform: scale(1.1)
 }
 
 .transactionName,
@@ -141,6 +146,11 @@ header {
   font-size: 1.6rem;
   cursor: pointer;
   border: none;
+  transition: 0.3s;
+}
+
+.addBtn:hover{
+  transform: scale(1.1);
 }
 
 .expenseDiv {
@@ -210,6 +220,7 @@ header {
 }
 .transactionHistory h2 {
   text-align: center;
+  margin-bottom: 4rem;
 }
 
 .svgBudget,
@@ -240,4 +251,35 @@ header {
   padding:1rem 2rem;
   background-color: var(--secondary--color);
   border-radius: 2rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.transactionDescription div {
+  text-align: left;
+  width: 15%;
+}
+
+.removeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  position: absolute;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+  border-radius: 15px;
+  width: 3.5rem;
+  height: 3.5rem;
+  font-weight: bold;
+  right: 2%;
+top: 15%;
+  border: 3px solid #9c1443;
+  transition: 0.3s;
+  background-color: #e91e63;
+}
+
+.removeBtn:hover {
+  transform: scale(1.1);
 }

@@ -1,39 +1,43 @@
-'use strict'
-import { constants } from "./constants"
-import { Budget, Transaction, TransactionManager } from "./classes"
+"use strict";
+import { constants } from "./constants";
+import { Budget, Transaction, TransactionManager } from "./classes";
+import { createTransaction,getCurrentDate } from "./helpers";
 const {
-    budgetInput,
-    setBudgetBtn,
-    expenseNameInput,
-    expenseCostInput,
-    addTransactionBtn,
-    totalBudget,
-    totalExpenses,
-    totalBalance,
-    transactionHistory,
-} = constants()
+  budgetInput,
+  setBudgetBtn,
+  expenseNameInput,
+  expenseCostInput,
+  addTransactionBtn,
+  totalBudget,
+  totalExpenses,
+  totalBalance,
+  transactionHistory,
+} = constants();
+let counter = 0;
+const budget = new Budget();
 
-const budget = new Budget()
+setBudgetBtn.addEventListener("click", function () {
+  budget.setBudget(budgetInput.value);
+  budget.setBalance();
+  totalBudget.textContent = `$${budgetInput.value}`;
+  totalBalance.textContent = `$${budget.getBalance()}`;
+  console.log(expenseCostInput);
+  budgetInput.value = "";
+});
 
-setBudgetBtn.addEventListener('click', function(){
-    budget.setBudget(budgetInput.value)
-    console.log(budget.getBudget());
-    totalBudget.textContent = `$${budgetInput.value}`
-    budgetInput.value = ''     
-})
+addTransactionBtn.addEventListener("click", function () {
+  counter++;
+  const expenseNameValue = expenseNameInput.value;
+  const expenseCostValue = expenseCostInput.value;
+ const date = getCurrentDate()
+  const transaction = new Transaction(
+    counter,
+    expenseNameValue,
+    expenseCostValue,
+    date,
+    "Remove"
+  );
+  createTransaction(transactionHistory, transaction);
+});
 
-addTransactionBtn.addEventListener('click', function(){
-    const expenseNameValue = expenseNameInput.value
-    console.log(expenseNameValue); 
-    const expenseCostValue = expenseCostInput.value
-    console.log(expenseCostValue);
-    const transaction = new Transaction(1, expenseNameValue, expenseCostValue, 25, 'remove')
-    console.log(transaction);
-})
 
-const getCurrentDate = () => {
-    const date = new Date()
-
-}
-
-getCurrentDate()

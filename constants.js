@@ -21,5 +21,5 @@ export function constants() {
     totalExpenses,
     totalBalance,
     transactionHistory,
-  };
+};
 }

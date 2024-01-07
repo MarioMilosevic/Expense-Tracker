@@ -14,6 +14,14 @@ export class Budget {
   getBudget() {
     return this.budget;
   }
+
+  setBalance(){
+    this.balance = this.budget - this.expense
+  }
+
+  getBalance(){
+    return this.balance
+  }
 }
 
 export class Transaction {
