@@ -25,29 +25,31 @@ const transactionMan = new TransactionManager();
 const userInterface = new UI();
 
 setBudgetBtn.addEventListener("click", function () {
-  if (budgetInput.value !== "") {
+  console.log(budgetInput.value);
+  console.log(Number(budgetInput.value));
+  if (budgetInput.value !== "" && !isNaN(Number(budgetInput.value))) {
     budget.setBudget(budgetInput.value);
     budget.setBalance(budget.getBudget());
     totalBudget.textContent = `$${budgetInput.value}`;
     totalBalance.textContent = `$${budget.getBalance()}`;
     userInterface.reset(budgetInput);
   } else {
-    alert("ne");
+    alert("Budget not properly set");
   }
 });
 
 addTransactionBtn.addEventListener("click", function () {
   if (budget.getBudget() > 0) {
-    counter++;
     const expenseNameValue = expenseNameInput.value;
     const expenseCostValue = expenseCostInput.value;
-
+    
     if (expenseCostValue > 0) {
       budget.setExpense(expenseCostValue);
-
+      
       if (budget.getBalance() > budget.getExpense()) {
         totalExpenses.textContent = `$${expenseCostValue}`;
         const date = getCurrentDate();
+        counter++;
         const transaction = new Transaction(
           counter,
           expenseNameValue,
