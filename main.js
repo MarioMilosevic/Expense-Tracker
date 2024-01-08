@@ -42,32 +42,34 @@ addTransactionBtn.addEventListener("click", function () {
     const expenseNameValue = expenseNameInput.value;
     const expenseCostValue = expenseCostInput.value;
 
-    budget.setExpense(expenseCostValue);
+    if (expenseCostValue > 0) {
+      budget.setExpense(expenseCostValue);
 
-    
-    if (budget.getBalance() > budget.getExpense()) {
-      totalExpenses.textContent = `$${expenseCostValue}`;
-      const date = getCurrentDate();
-      const transaction = new Transaction(
-        counter,
-        expenseNameValue,
-        expenseCostValue,
-        date,
-        "Remove"
-      );
+      if (budget.getBalance() > budget.getExpense()) {
+        totalExpenses.textContent = `$${expenseCostValue}`;
+        const date = getCurrentDate();
+        const transaction = new Transaction(
+          counter,
+          expenseNameValue,
+          expenseCostValue,
+          date,
+          "Remove"
+        );
 
-      createTransaction(transactionHistory, transaction);
+        createTransaction(transactionHistory, transaction);
 
-      transactionMan.add(transaction);
-      console.log(transactionMan.getTransactions());
-      budget.calculateBalance();
-      totalBalance.textContent = `$${budget.getBalance()}`;
-      userInterface.show(mainTransactionDescription);
-      userInterface.hide(transactionHistoryHeading);
-      userInterface.reset(expenseNameInput);
-      userInterface.reset(expenseCostInput);
+        transactionMan.add(transaction);
+        budget.calculateBalance();
+        totalBalance.textContent = `$${budget.getBalance()}`;
+        userInterface.show(mainTransactionDescription);
+        userInterface.hide(transactionHistoryHeading);
+        userInterface.reset(expenseNameInput);
+        userInterface.reset(expenseCostInput);
+      } else {
+        alert("You don't have enough money left");
+      }
     } else {
-      alert("You don't have enough money left");
+      alert("Transaction must be greater than 0");
     }
   } else {
     alert("Please type in budget value");

@@ -118,7 +118,7 @@ header {
 
 .transactionName input,
 .transactionCost input {
-  height: 55px;
+  height: 5.5rem;
   border-radius: 2rem;
   width: 100%;
   padding-left: 1rem;
@@ -141,7 +141,7 @@ header {
   background-color: var(--cta--color);
   color: var(--body--background-color);
   padding: 1rem 2rem;
-  height: 60px;
+  height: 5.6rem;
   border-radius: 2rem;
   padding: 1rem 2rem;
   font-size: 1.6rem;
@@ -217,7 +217,7 @@ header {
   flex-direction: column;
   align-items: center;
   font-size: 2rem;
-  min-height: 200px;
+  min-height: 20rem;
 
 }
 .transactionHistory h2 {
@@ -247,7 +247,7 @@ header {
 
 .transactionDescription{
   display: flex;
-  border: 1px solid black;
+  border: 0.1rem solid black;
   width: 100%;
   justify-content: space-between;
   padding:1rem 2rem;
@@ -270,14 +270,14 @@ header {
   position: absolute;
   text-decoration: none;
   color: #ffffff;
-  font-size: 18px;
-  border-radius: 15px;
+  font-size: 1.8rem;
+  border-radius: 1.5rem;
   width: 3.5rem;
   height: 3.5rem;
   font-weight: bold;
   right: 2%;
 top: 15%;
-  border: 3px solid #9c1443;
+  border: 0.3rem solid #9c1443;
   transition: 0.3s;
   background-color: #e91e63;
 }
