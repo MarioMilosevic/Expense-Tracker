@@ -1,6 +1,6 @@
 "use strict";
 import { constants } from "./constants";
-import { Budget, TransactionManager, Transaction, UI } from "./classes";
+import { Budget, TransactionManager,Transaction, UI } from "./classes";
 import { getCurrentDate } from "./helpers";
 // import Toastify from 'toastify-js'
 // import "toastify-js/src/toastify.css"
@@ -37,12 +37,12 @@ setBudgetBtn.addEventListener("click", function () {
 });
 
 addTransactionBtn.addEventListener("click", function () {
-  const expenseNameValue = expenseNameInput.value;
-  const expenseCostValue = expenseCostInput.value;
-  budget.setExpense(expenseCostValue);
-
   if (budget.getBudget() > 0) {
     counter++;
+    const expenseNameValue = expenseNameInput.value;
+    const expenseCostValue = expenseCostInput.value;
+
+    budget.setExpense(expenseCostValue);
     totalExpenses.textContent = `$${expenseCostValue}`;
 
     const date = getCurrentDate();
@@ -87,14 +87,10 @@ const createTransaction = (parent, transaction) => {
   const removeBtn = transactionDiv.querySelector(".removeBtn");
   removeBtn.addEventListener("click", function () {
     transactionMan.remove(transaction.id);
-    removeBtn.parentElement.remove();
-    if (transactionMan.getTransactions().length === 0) {
-      userInterface.show(transactionHistoryHeading);
-      userInterface.hide(mainTransactionDescription);
+    removeBtn.parentElement.remove()
+    if(transactionMan.getTransactions().length === 0){
+      userInterface.show(transactionHistoryHeading)
+      userInterface.hide(mainTransactionDescription)
     }
   });
 };
-
-// Ukoliko je transaction cost prazan da baci error
-// Da kada izbrisem transakciju na prethodnu bude broj da idu redom kao
-// Ako transakcija bude veci iznos od balansa, da izbaci error
