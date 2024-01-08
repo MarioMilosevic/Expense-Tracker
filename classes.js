@@ -16,7 +16,7 @@ export class Budget {
   }
 
   setExpense(value){
-    this.expense = Number(value)
+    this.expense = this.expense + Number(value)
   }
 
   getExpense(){

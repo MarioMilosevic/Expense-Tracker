@@ -25,8 +25,6 @@ const transactionMan = new TransactionManager();
 const userInterface = new UI();
 
 setBudgetBtn.addEventListener("click", function () {
-  console.log(budgetInput.value);
-  console.log(Number(budgetInput.value));
   if (budgetInput.value !== "" && !isNaN(Number(budgetInput.value))) {
     budget.setBudget(budgetInput.value);
     budget.setBalance(budget.getBudget());
@@ -42,12 +40,12 @@ addTransactionBtn.addEventListener("click", function () {
   if (budget.getBudget() > 0) {
     const expenseNameValue = expenseNameInput.value;
     const expenseCostValue = expenseCostInput.value;
-    
+
     if (expenseCostValue > 0) {
       budget.setExpense(expenseCostValue);
-      
+
       if (budget.getBalance() > budget.getExpense()) {
-        totalExpenses.textContent = `$${expenseCostValue}`;
+        totalExpenses.textContent = `$${budget.getExpense()}`;
         const date = getCurrentDate();
         counter++;
         const transaction = new Transaction(
@@ -91,7 +89,6 @@ const createTransaction = (parent, transaction) => {
         <button class="removeBtn">X</button>
     `;
   parent.appendChild(transactionDiv);
-  console.log(transactionMan.getTransactions());
 
   const removeBtn = transactionDiv.querySelector(".removeBtn");
   removeBtn.addEventListener("click", function () {
@@ -104,8 +101,4 @@ const createTransaction = (parent, transaction) => {
   });
 };
 
-// Ukoliko je transaction cost prazan da baci error
-
 // Da kada izbrisem transakciju na prethodnu bude broj da idu redom kao (da kada dodjeljuje broj, proslijedi index objekta iz arraya plus 1)
-
-// Ako transakcija bude veci iznos od balansa, da izbaci error
