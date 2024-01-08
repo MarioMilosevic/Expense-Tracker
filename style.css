@@ -76,7 +76,7 @@ header {
 }
 
 .budgetInput input {
-  width: 65%;
+  width: 75%;
   border-radius: 2rem;
   padding-left: 1rem;
   font-size: 1.8rem;
@@ -87,7 +87,7 @@ header {
   color: var(--body--background-color);
   padding: 1rem 2rem;
   border-radius: 2rem;
-  width: 30%;
+  width: 20%;
   height: 100%;
   font-size: 1.6rem;
   border: none;
@@ -126,7 +126,7 @@ header {
 }
 
 .transactionCost input {
-  width: 30%;
+  width: 50%;
 }
 
 .transactionCostInput {
