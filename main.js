@@ -45,11 +45,8 @@ addTransactionBtn.addEventListener("click", function () {
 
     if (expenseCostValue > 0) {
       budget.setExpense(expenseCostValue);
-      // promjenio da je this.expense = expensecost value umjesto da se sabiraju
-
       if (budget.getBalance() >= budget.getExpense()) {
         budget.addExpense(budget.getExpense())
-        // totalExpenses.textContent = `$${budget.getExpense()}`;
         totalExpenses.textContent = `$${budget.totalExpenses()}`;
         const date = getCurrentDate();
         counter++;
@@ -62,7 +59,7 @@ addTransactionBtn.addEventListener("click", function () {
         );
 
         transactionMan.add(transaction);
-        createTransaction(transactionHistory, transaction);
+        createTransaction2(transactionHistory, transaction);
 
         console.log(transactionMan.getTransactions());
         budget.calculateBalance();
@@ -107,14 +104,41 @@ const createTransaction = (parent, transaction) => {
   });
 };
 
-const array = [15, 16, 17, 18, 19];
 
-function reducer(accumulator, currentValue, index) {
-  const returns = accumulator + currentValue;
-  console.log(
-    `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
-  );
-  return returns;
-}
 
-array.reduce(reducer);
+
+// const createTransaction2 = (parent, transaction) => {
+//   budget.getExpenseArr().forEach((el,i) => {
+//     const transactionDiv = document.createElement("div");
+//     transactionDiv.classList.add("transactionDescription");
+//     transactionDiv.innerHTML = "";
+//     transactionDiv.innerHTML = `
+//     <div>${transaction.num}.</div>
+//     <div>${transaction.name}</div>
+//     <div>$${transaction.cost}</div>
+//     <div>${transaction.date}</div>
+//     <div>${transaction.actions}</div>
+//     <button class="removeBtn">X</button>
+//   })`;
+//   parent.appendChild(transactionDiv))
+
+  const createTransaction2 = (parent, transaction) => {
+    parent.innerHTML = ''
+    transactionMan.getTransactions().forEach((el, index) => {
+      const transactionDiv = document.createElement("div");
+      transactionDiv.classList.add("transactionDescription");
+      transactionDiv.innerHTML = `
+        <div>${index + 1}.</div>
+        <div>${el.name}</div>
+        <div>$${el.cost}</div>
+        <div>${el.date}</div>
+        <div>${el.actions}</div>
+        <button class="removeBtn">X</button>
+      `;
+      parent.appendChild(transactionDiv);
+      
+    });
+  };
+  
+  // sve da ispzanim pa sve napravim sa stanjem u arrayu
+  // kada brisem isto uklonim, i napravim sve nakon praznjenja 
