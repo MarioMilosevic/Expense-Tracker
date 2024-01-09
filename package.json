@@ -12,6 +12,7 @@
     "vite": "^5.0.8"
   },
   "dependencies": {
+    "nanoid": "^3.3.7",
     "toastify-js": "^1.12.0"
   }
 }

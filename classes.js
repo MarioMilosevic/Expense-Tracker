@@ -1,11 +1,25 @@
 "use strict";
 
+import { nanoid } from 'https://cdn.jsdelivr.net/npm/nanoid/nanoid.js'
+
+
 export class Budget {
   constructor() {
     this.budget = 0;
     this.expense = 0;
     this.balance = 0;
+    this.expenseArr = []
   }
+
+addExpense(expense){
+  this.expenseArr.push(expense)
+}
+
+totalExpenses(){
+  const sum = this.expenseArr.reduce((acc, curr) => acc + curr)
+return sum
+}
+
 
   setBudget(value) {
     this.budget = Number(value);
@@ -16,7 +30,7 @@ export class Budget {
   }
 
   setExpense(value){
-    this.expense = this.expense + Number(value)
+    this.expense = Number(value)
   }
 
   getExpense(){
@@ -43,7 +57,7 @@ export class Transaction {
     this.cost = cost;
     this.date = date;
     this.actions = actions;
-    this.id = Math.random() * 1000;
+    this.id = nanoid();
   }
 }
 

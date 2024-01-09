@@ -5,6 +5,8 @@ import { getCurrentDate } from "./helpers";
 // import Toastify from 'toastify-js'
 // import "toastify-js/src/toastify.css"
 
+
+
 const {
   budgetInput,
   setBudgetBtn,
@@ -43,9 +45,12 @@ addTransactionBtn.addEventListener("click", function () {
 
     if (expenseCostValue > 0) {
       budget.setExpense(expenseCostValue);
+      // promjenio da je this.expense = expensecost value umjesto da se sabiraju
 
-      if (budget.getBalance() > budget.getExpense()) {
-        totalExpenses.textContent = `$${budget.getExpense()}`;
+      if (budget.getBalance() >= budget.getExpense()) {
+        budget.addExpense(budget.getExpense())
+        // totalExpenses.textContent = `$${budget.getExpense()}`;
+        totalExpenses.textContent = `$${budget.totalExpenses()}`;
         const date = getCurrentDate();
         counter++;
         const transaction = new Transaction(
@@ -56,9 +61,10 @@ addTransactionBtn.addEventListener("click", function () {
           "Remove"
         );
 
+        transactionMan.add(transaction);
         createTransaction(transactionHistory, transaction);
 
-        transactionMan.add(transaction);
+        console.log(transactionMan.getTransactions());
         budget.calculateBalance();
         totalBalance.textContent = `$${budget.getBalance()}`;
         userInterface.show(mainTransactionDescription);
@@ -101,4 +107,14 @@ const createTransaction = (parent, transaction) => {
   });
 };
 
-// Da kada izbrisem transakciju na prethodnu bude broj da idu redom kao (da kada dodjeljuje broj, proslijedi index objekta iz arraya plus 1)
+const array = [15, 16, 17, 18, 19];
+
+function reducer(accumulator, currentValue, index) {
+  const returns = accumulator + currentValue;
+  console.log(
+    `accumulator: ${accumulator}, currentValue: ${currentValue}, index: ${index}, returns: ${returns}`,
+  );
+  return returns;
+}
+
+array.reduce(reducer);
