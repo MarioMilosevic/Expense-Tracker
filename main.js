@@ -57,9 +57,8 @@ addTransactionBtn.addEventListener("click", function () {
         );
 
         transactionMan.add(transaction);
-        createTransaction2(transactionHistory);
+        createTransaction(transactionHistory);
 
-        // console.log(transactionMan.getTransactions());
         budget.calculateBalance();
         totalBalance.textContent = `$${budget.getBalance()}`;
         userInterface.show(mainTransactionDescription);
@@ -77,12 +76,9 @@ addTransactionBtn.addEventListener("click", function () {
   }
 });
 
-const createTransaction2 = (parent) => {
-  console.log("array prije", transactionMan.getTransactions());
+const createTransaction = (parent) => {
   parent.innerHTML = "";
   transactionMan.getTransactions().forEach((el, i) => {
-    //  createDiv(el, i)
-    console.log(el);
     const transactionDiv = document.createElement("div");
     transactionDiv.classList.add("transactionDescription");
     transactionDiv.innerHTML = `
@@ -91,66 +87,21 @@ const createTransaction2 = (parent) => {
         <div>$${el.cost}</div>
         <div>${el.date}</div>
         <div>${el.actions}</div>
-        <button class="removeBtn">X</button>
+        <button data-expenseid=${el.id} class="removeBtn">X</button>
       `;
 
-    const removeBtn = transactionDiv.querySelector(".removeBtn");
-
-    removeBtn.addEventListener("click", function () {
-      console.log('remove dugme');
-      // ///////////////////////////////////////////
-      transactionMan.remove(el.id);
-      console.log("array posle", transactionMan.getTransactions());
-      parent.innerHTML = "";
-      transactionMan.getTransactions().forEach((el, i) => {
-        const transactionDiv = document.createElement("div");
-        transactionDiv.classList.add("transactionDescription");
-        transactionDiv.innerHTML = `
-          <div>${i + 1}.</div>
-          <div>${el.name}</div>
-          <div>$${el.cost}</div>
-          <div>${el.date}</div>
-          <div>${el.actions}</div>
-          <button class="removeBtn">X</button>
-        `;
-        parent.appendChild(transactionDiv);
-      });
-    });
     parent.appendChild(transactionDiv);
-
-    /* removeBtn.addEventListener("click", function () {
-
-      parent.innerHTML = ''
-      
-      // createDiv(el,i)
-      parent.appendChild(transactionDiv);
-    })
-
-      // removeBtn.parentElement.remove();
-      if (transactionMan.getTransactions().length === 0) {
-        userInterface.show(transactionHistoryHeading);
-        userInterface.hide(mainTransactionDescription);
-      }
-    }
-    );*/
   });
-  // iznad se petlja zavrsava
 };
 
-// sve da ispzanim pa sve napravim sa stanjem u arrayu
-// kada brisem isto uklonim, i napravim sve nakon praznjenja
-
-// const createTransaction2 = (parent, transaction) => {
-//   budget.getExpenseArr().forEach((el,i) => {
-//     const transactionDiv = document.createElement("div");
-//     transactionDiv.classList.add("transactionDescription");
-//     transactionDiv.innerHTML = "";
-//     transactionDiv.innerHTML = `
-//     <div>${transaction.num}.</div>
-//     <div>${transaction.name}</div>
-//     <div>$${transaction.cost}</div>
-//     <div>${transaction.date}</div>
-//     <div>${transaction.actions}</div>
-//     <button class="removeBtn">X</button>
-//   })`;
-//   parent.appendChild(transactionDiv))
+transactionHistory.addEventListener("click", function (e) {
+  
+  transactionMan.remove(e.target.dataset.expenseid);
+  transactionHistory.innerHTML = "";
+  createTransaction(transactionHistory);
+  if (transactionMan.getTransactions().length === 0) {
+    transactionHistory.appendChild(transactionHistoryHeading)
+    userInterface.hide(mainTransactionDescription);
+    userInterface.show(transactionHistoryHeading);
+  }
+});
