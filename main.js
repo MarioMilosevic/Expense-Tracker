@@ -77,7 +77,6 @@ addTransactionBtn.addEventListener("click", function () {
   }
 });
 
-
 const createTransaction2 = (parent) => {
   console.log("array prije", transactionMan.getTransactions());
   parent.innerHTML = "";
@@ -96,26 +95,33 @@ const createTransaction2 = (parent) => {
       `;
 
     const removeBtn = transactionDiv.querySelector(".removeBtn");
+
     removeBtn.addEventListener("click", function () {
-// ///////////////////////////////////////////
+      console.log('remove dugme');
+      // ///////////////////////////////////////////
       transactionMan.remove(el.id);
       console.log("array posle", transactionMan.getTransactions());
+      parent.innerHTML = "";
+      transactionMan.getTransactions().forEach((el, i) => {
+        const transactionDiv = document.createElement("div");
+        transactionDiv.classList.add("transactionDescription");
+        transactionDiv.innerHTML = `
+          <div>${i + 1}.</div>
+          <div>${el.name}</div>
+          <div>$${el.cost}</div>
+          <div>${el.date}</div>
+          <div>${el.actions}</div>
+          <button class="removeBtn">X</button>
+        `;
+        parent.appendChild(transactionDiv);
+      });
     });
+    parent.appendChild(transactionDiv);
 
     /* removeBtn.addEventListener("click", function () {
 
       parent.innerHTML = ''
-      transactionMan.getTransactions().forEach((el, i) => {
-      const transactionDiv = document.createElement("div");
-    transactionDiv.classList.add("transactionDescription");
-    transactionDiv.innerHTML = `
-        <div>${i + 1}.</div>
-        <div>${el.name}</div>
-        <div>$${el.cost}</div>
-        <div>${el.date}</div>
-        <div>${el.actions}</div>
-        <button class="removeBtn">X</button>
-      `;
+      
       // createDiv(el,i)
       parent.appendChild(transactionDiv);
     })
@@ -127,16 +133,12 @@ const createTransaction2 = (parent) => {
       }
     }
     );*/
-    parent.appendChild(transactionDiv);
   });
   // iznad se petlja zavrsava
 };
 
 // sve da ispzanim pa sve napravim sa stanjem u arrayu
 // kada brisem isto uklonim, i napravim sve nakon praznjenja
-
-
-
 
 // const createTransaction2 = (parent, transaction) => {
 //   budget.getExpenseArr().forEach((el,i) => {
