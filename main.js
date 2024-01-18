@@ -2,7 +2,7 @@
 import { initQuerySelectors } from "./initQuerySelectors";
 import { Budget, TransactionManager, Transaction, UI } from "./classes";
 import { getCurrentDate, createDiv } from "./helpers";
-
+import Swal from "sweetalert2";
 const {
   budgetInput,
   setBudgetBtn,
@@ -30,7 +30,11 @@ setBudgetBtn.addEventListener("click", function () {
     totalBalance.textContent = `$${budget.getBalance()}`;
     userInterface.reset(budgetInput);
   } else {
-    alert("Budget not properly set");
+    Swal.fire({
+      title: "Budget ?",
+      text: "Budget not properly set",
+      icon: "error"
+    });
   }
 });
 
@@ -64,13 +68,23 @@ addTransactionBtn.addEventListener("click", function () {
         userInterface.reset(expenseNameInput);
         userInterface.reset(expenseCostInput);
       } else {
-        alert("You don't have enough money left");
+        Swal.fire({
+          title: "Money ?",
+          text: "You don't have enough money left",
+          icon: "error"
+        });
       }
     } else {
-      alert("Transaction must be greater than 0");
+      Swal.fire({
+        text: "Transaction must be greater than 0",
+        icon: "error"
+      });
     }
   } else {
-    alert("Please type in budget value");
+    Swal.fire({
+      text:"Please type in budget value",
+      icon:"error"
+    })
   }
 });
 
