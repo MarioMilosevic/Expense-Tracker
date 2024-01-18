@@ -1,9 +1,7 @@
 "use strict";
-import { constants } from "./constants";
+import { initQuerySelectors } from "./initQuerySelectors";
 import { Budget, TransactionManager, Transaction, UI } from "./classes";
 import { getCurrentDate, createDiv } from "./helpers";
-// import Toastify from 'toastify-js'
-// import "toastify-js/src/toastify.css"
 
 const {
   budgetInput,
@@ -17,7 +15,7 @@ const {
   transactionHistory,
   transactionHistoryHeading,
   mainTransactionDescription,
-} = constants();
+} = initQuerySelectors();
 
 let counter = 0;
 const budget = new Budget();
@@ -95,12 +93,11 @@ const createTransaction = (parent) => {
 };
 
 transactionHistory.addEventListener("click", function (e) {
-  
   transactionMan.remove(e.target.dataset.expenseid);
   transactionHistory.innerHTML = "";
   createTransaction(transactionHistory);
   if (transactionMan.getTransactions().length === 0) {
-    transactionHistory.appendChild(transactionHistoryHeading)
+    transactionHistory.appendChild(transactionHistoryHeading);
     userInterface.hide(mainTransactionDescription);
     userInterface.show(transactionHistoryHeading);
   }

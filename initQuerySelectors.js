@@ -1,6 +1,6 @@
 "use strict";
 
-export function constants() {
+export function initQuerySelectors() {
   const budgetInput = document.querySelector("#budget");
   const setBudgetBtn = document.querySelector("#setBtn");
   const expenseNameInput = document.querySelector("#expenseName");
